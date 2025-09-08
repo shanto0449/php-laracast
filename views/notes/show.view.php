@@ -1,7 +1,7 @@
 <?php
-require('views/partials/head.php');
-require('views/partials/nav.php');
-require('views/partials/banner.php');
+require __DIR__ . '/../partials/head.php';
+require __DIR__ . '/../partials/nav.php';
+require __DIR__ . '/../partials/banner.php';
 ?>
 <main>
   <div class="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
@@ -9,10 +9,10 @@ require('views/partials/banner.php');
       <a href="/notes" class="text-blue-500 hover:underline ">Go Back..</a>
     </p>
     <P>
-      <?= $note['body'] ?>
+      <?= htmlspecialchars($note['body']) ?>
     </P>
 
   </div>
 </main>
 <?php
-require('views/partials/footer.php');
+require __DIR__ . '/../partials/footer.php';
