@@ -1,16 +1,16 @@
-<?php require(__DIR__ . '/../partials/head.php'); ?>
-<?php require(__DIR__ . '/../partials/nav.php'); ?>
-<?php require(__DIR__ . '/../partials/banner.php'); ?>
+<?php require base_path('views/partials/head.php'); ?>
+<?php require base_path('views/partials/nav.php'); ?>
+<?php require base_path('views/partials/banner.php'); ?>
 <main>
-   <div class="md:grid md:grid-cols-3 md:gap-6">
+   <div class="md:grid md:grid-cols-3 md gap-6">
     <div class="mt-5 md:col-span-2 md:mt-0">
-        <form method="POST">
-            <div class="shadow sm:overflow-hidden sm:rounded-md">
+        <form  method="POST" action="/notes" >
+            <div class="shadow sm-overflow-hidden sm:rounded-md">
             <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
                 <div>
                 <label for="body" class="block text-sm font-medium text-gray-700"></label>
                 <div class="mt-1">
-                    <textarea id="body" name="body" rows="3" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Write your note here..."><?= htmlspecialchars($body ?? '') ?></textarea>
+                    <textarea id="body" name="body" rows="3" class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="Write your note here..."></textarea>
 
                     <?php if(isset($errors['body'])): ?>
                     <p class="mt-2 text-sm text-red-600"><?= $errors['body'] ?></p>
@@ -28,4 +28,4 @@
     </div>
    </div>
 </main>
-<?php require(__DIR__ . '/../partials/footer.php'); ?>
+<?php require base_path('views/partials/footer.php'); ?>
