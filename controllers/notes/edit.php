@@ -8,15 +8,14 @@ $currentUserId = 1;
 
 
 $note = $db->query("SELECT * FROM notes where  id = :id", [
+
     'id' => $_GET['id']
 ])->findOrFail();
 
 authorize($note['user_id'] === $currentUserId);
 
-$db->query('delete from notes where id = :id', [
-    'id' => $_POST['id']
+view('notes/edit.view.php', [
+    'heading' => 'Edit Note',
+    'errors' => [],
+    'note' => $note
 ]);
-
-header('location: /notes');
-exit();
-
