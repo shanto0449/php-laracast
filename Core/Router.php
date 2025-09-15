@@ -61,13 +61,8 @@ class Router
 
         foreach ($this->routes as $route) {
             if ($route['method'] === $method && $route['uri'] === $uri) {
-
                 //apply middleware 
-
-              if ($route['middleware']) {
-                  (new $route['middleware']())->handle();
-              }
-
+                Middleware::resolve($route['middleware']);
                 return require base_path($route['controller']);
             }
         }
@@ -84,11 +79,3 @@ class Router
         die();
     }
 }
-// $routes = require 'routes.php';
-
-// function routeToController($uri, $routes){
-//     if(array_key_exists($uri, $routes)){
-//         return require base_path($routes[$uri]);
-//     }
-//     abort();
-// }
