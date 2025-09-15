@@ -33,6 +33,8 @@ if (!empty($errors)) {
     exit();
 }
 
+
+
 $user = $db->query('select * from users where email = :email', [
     'email' => $email,
 ])->find();
