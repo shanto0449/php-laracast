@@ -13,8 +13,9 @@
                 <div>
                     <label for="email" class="block text-sm/6 font-medium text-gray-100">Email address</label>
                     <div class="mt-2">
-                        <input id="email" type="email" name="email" required class="block w-full rounded-md border border-gray-600 bg-white/5 px-3 py-1.5 text-base text-black outline-1 outline-white/10 placeholder:text-gray-500 focus:border-indigo-500 focus:outline-2 focus:outline-indigo-500 sm:text-sm/6" />
-                    </div>
+                        <input id="email" type="email" name="email" required class="block w-full rounded-md border border-gray-600 bg-white/5 px-3 py-1.5 text-base text-black outline-1 outline-white/10 placeholder:text-gray-500 focus:border-indigo-500 focus:outline-2 focus:outline-indigo-500 sm:text-sm/6" 
+                        placeholder="Enter your email" value="<?= old('email') ?>"/>
+                    </div>  
                     <?php if(isset($errors['email'])): ?>
                     <p class="mt-2 text-sm text-red-600"><?= $errors['email'] ?></p>
                     <?php endif; ?>

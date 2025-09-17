@@ -36,7 +36,21 @@ if($user){
         'password' => password_hash($password, PASSWORD_BCRYPT)
     ]);
 
-    login($user);
+    // fetch the newly created user
+    $user = $db->query('select * from users where email = :email', [
+        'email' => $email
+    ])->find();
+
+    // ensure session is started and mark the user as logged in
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    if (is_object($user) && isset($user->id)) {
+        $_SESSION['user_id'] = $user->id;
+    } elseif (is_array($user) && isset($user['id'])) {
+        $_SESSION['user_id'] = $user['id'];
+    }
+
     header('location: /');
     exit();
 }
