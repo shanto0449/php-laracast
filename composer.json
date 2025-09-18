@@ -1,0 +1,16 @@
+{
+    "name": "shanto/php-laracast",
+   "authors": [
+    {
+        "name": "Shanto",
+        "email": "shsntohossen22@gmail.com"
+    }
+   ],
+    "require": {},
+    "autoload": {
+        "psr-4":{
+            "Core\\":"Core/",
+            "Http\\":"Http/"
+        }
+    }
+}
