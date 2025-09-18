@@ -6,11 +6,21 @@
         "email": "shsntohossen22@gmail.com"
     }
    ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^12.29"
+    },
     "autoload": {
         "psr-4":{
             "Core\\":"Core/",
             "Http\\":"Http/"
+        }
+    },
+    "require-dev": {
+        "pestphp/pest": "^3.8"
+    },
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
         }
     }
 }
